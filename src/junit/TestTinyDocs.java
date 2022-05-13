@@ -37,6 +37,9 @@ public class TestTinyDocs
         makeDetector(3);
         assertEquals(7, detector.getNumNgramsInFile(FILE1));
         Collection<String> ngrams = detector.getNgramsInFile(FILE1);
+        for (String str : ngrams) {
+        	System.out.println(str);
+        }
         assertTrue(ngrams.contains("the quick brown"));
         assertTrue(ngrams.contains("quick brown fox"));
         assertTrue(ngrams.contains("brown fox jumps"));
