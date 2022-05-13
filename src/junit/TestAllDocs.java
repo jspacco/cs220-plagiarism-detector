@@ -37,7 +37,11 @@ class TestAllDocs {
 		// The average essay is less than 500 words long.
 		// What is a good number to put here? Try some different values to
 		// figure that out!
-		Collection<String> pairs = detector.getSuspiciousPairs(500);
+		Collection<String> pairs = detector.getSuspiciousPairs(600);
+		//I belive 125 ngrams is enough as it is 25% of the average essay 
+		//which according to sources, essays with >25% plagarism is in fact not just attributed to quoting
+		//but is more likely to be copied words
+		//thanks
 		for (String pair : pairs) {
 			System.out.println(pair);
 		}
