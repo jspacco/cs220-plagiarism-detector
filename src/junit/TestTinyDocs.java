@@ -37,6 +37,15 @@ public class TestTinyDocs
         makeDetector(3);
         assertEquals(7, detector.getNumNgramsInFile(FILE1));
         Collection<String> ngrams = detector.getNgramsInFile(FILE1);
+       for(String x: ngrams) {
+    	   System.out.println(x);
+        }
+       System.out.println(" ");
+       Collection<String> ngrams2 = detector.getNgramsInFile(FILE2);
+       for(String x: ngrams2) {
+    	   System.out.println(x);
+        }
+        
         assertTrue(ngrams.contains("the quick brown"));
         assertTrue(ngrams.contains("quick brown fox"));
         assertTrue(ngrams.contains("brown fox jumps"));
@@ -63,6 +72,7 @@ public class TestTinyDocs
         makeDetector(3);
         String msg1 = "If you return 6, then you are double-counting";
         assertEquals(msg1, 3, detector.getNumNGramsInCommon(FILE1, FILE2));
+        
         String msg2 = "If you return 0, then you are counting in one direction (file1 to file2) but not the reverse (file2 to file1)";
         assertEquals(msg2, 3, detector.getNumNGramsInCommon(FILE2, FILE1));
     }
