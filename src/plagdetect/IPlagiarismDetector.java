@@ -59,7 +59,7 @@ public interface IPlagiarismDetector
      * @return
      */
     int getNumNgramsInFile(String filename);
-    
+     
     
     /**
      * The data here is stored:
